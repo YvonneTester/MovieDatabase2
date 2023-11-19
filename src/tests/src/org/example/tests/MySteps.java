@@ -18,34 +18,25 @@ public class MySteps {
         // Write code here that turns the phrase above into concrete actions
         webDriver.get("https://www.themoviedb.org/");
     }
-    @Given("My cursor is in the search bar")
-    public void cursor_search_bar() {
+    @Given("I search for Titanic")
+    public void search_titanic() {
         // Zoek het input-element op basis van de ID
         WebElement searchInput = webDriver.findElement(By.cssSelector("input#inner_search_v4"));
 
 // Voer tekst in het zoekveld in
-        searchInput.sendKeys("Jouw zoektekst hier");
+        searchInput.sendKeys("Titanic");
     }
-    @Given("There is a search button")
-    public void there_is_a_search_button() {
+    @When("I click the search button")
+    public void i_click_search_button() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-    @When("I enter a movie name")
-    public void i_enter_a_movie_name() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        WebElement searchInput2 = webDriver.findElement(By.cssSelector("input[type='submit'][value='Search']"));
+        searchInput2.click();
     }
 
-    @Then("I click the search button")
-    public void i_click_the_search_button() {
+    @Then("The first search result should be Titanic")
+    public void first_search_should_be_titanic() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        WebElement firstSearch = webDriver.findElement(By.xpath("//h2[contains(text(),'Titanic')]"));
     }
 
-    @After // runs after all tests, we clean up stuff here
-    public void CleanUp(){
-        //always close your web driver
-        webDriver.close();
-    }
 }

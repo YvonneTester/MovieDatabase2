@@ -36,11 +36,6 @@
             <artifactId>selenium-java</artifactId>
             <version>4.15.0</version>
         </dependency>
-        <dependency>
-            <groupId>seleniumhq.selenium.firefox.driver</groupId>
-            <artifactId>selenium-firefox</artifactId>
-            <version>4.3.0</version>
-        </dependency>
     </dependencies>
 
 </project>
